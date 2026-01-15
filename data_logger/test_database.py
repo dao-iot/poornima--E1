@@ -12,15 +12,14 @@ DEVICE_ID = "EV_TEST_001"
 def run_database_tests():
     print("=== DATA LOGGER TESTS STARTED ===")
 
-    # ------------------------------
+   
     # 1. Create Database & Table
-    # ------------------------------
+   
     create_table()
     print("[PASS] Database table created successfully")
 
-    # ------------------------------
+   
     # 2. Insert Sample Sensor Data
-    # ------------------------------
     sensors = [
         ("vehicle_speed_kmh", 45, "km/h"),
         ("motor_rpm", 3600, "rpm"),
@@ -42,24 +41,20 @@ def run_database_tests():
 
     print("[PASS] Sensor data inserted successfully")
 
-    # ------------------------------
     # 3. Fetch Latest Reading
-    # ------------------------------
     latest_speed = fetch_latest_reading("vehicle_speed_kmh")
     if latest_speed:
         print("[PASS] Latest reading fetched:", latest_speed)
     else:
         print("[FAIL] No latest reading found")
 
-    # ------------------------------
     # 4. Fetch Last N Readings
-    # ------------------------------
+
     last_readings = fetch_last_n_readings("motor_rpm", limit=3)
     print(f"[PASS] Last {len(last_readings)} motor RPM readings fetched")
 
-    # ------------------------------
+  
     # 5. Test Circular Buffer Cleanup
-    # ------------------------------
     deleted = cleanup_old_records(hours=0)
     print(f"[PASS] Circular buffer cleanup executed ({deleted} old records deleted)")
 

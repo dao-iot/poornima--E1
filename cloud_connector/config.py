@@ -1,6 +1,5 @@
-# -------------------------------------------------
+
 # ThingsBoard MQTT Configuration
-# -------------------------------------------------
 
 BROKER = "demo.thingsboard.io"
 PORT = 1883

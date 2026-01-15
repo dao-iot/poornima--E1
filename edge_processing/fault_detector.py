@@ -2,9 +2,7 @@ import sys
 import os
 import time
 
-# -------------------------------------------------
 # PROJECT ROOT PATH
-# -------------------------------------------------
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(ROOT_DIR)
 
@@ -12,9 +10,8 @@ from data_logger.database import fetch_last_n_readings
 
 print("=== FAULT DETECTION ENGINE (PHASE 4 – EDGE PROCESSING) ===")
 
-# -------------------------------------------------
 # THRESHOLDS (AS PER PDF)
-# -------------------------------------------------
+
 THRESHOLDS = {
     "motor_temp_c": {
         "limit": 90,
@@ -42,9 +39,7 @@ THRESHOLDS = {
     }
 }
 
-# -------------------------------------------------
 # FAULT CHECK FUNCTION
-# -------------------------------------------------
 def check_faults():
     faults = []
 
@@ -68,9 +63,8 @@ def check_faults():
     return faults
 
 
-# -------------------------------------------------
 # CONTINUOUS MONITORING LOOP
-# -------------------------------------------------
+
 while True:
     detected_faults = check_faults()
 
