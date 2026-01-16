@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+venv/
+env/
+.env
+
+# SQLite & DB files (don't commit test DB)
+*.db
+*.sqlite3
+
+# Editor/IDE
+.vscode/
+.idea/
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# build / dependency folders
+build/
+dist/
+.pio/
+node_modules/
+
+# logs
+*.log
+
+# secrets / config
+config.py
+*.pem
+*.key
